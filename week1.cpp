@@ -1,9 +1,7 @@
 #include <iostream>
 #include <random>
-// Pseudorandom Generation
-// Fixed Seed
+// Uniform Integer
 int main() {
-    std::random_device device;
-    std::default_random_engine engine{device()};
+    std::uniform_int_distribution<int> distribution(1, 6);
     return 0;
 }
