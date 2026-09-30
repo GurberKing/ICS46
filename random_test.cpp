@@ -1,17 +1,21 @@
 #include <iostream>
-/*
+#include <random>
+const unsigned int SEED = 46;
 int main()
 {
-    std::random_device device;
+    // std::random_device device; SEED가 주어졌기에 Entorpy Source 방식으로 하면 안됨.
     // Seed with a value from device; passing device itself does not compile.
-    std::default_random_engine engine{device()};
-    std::uniform_int_distribution<int> distribution{1, 6};
+    // std::default_random_engine engine{device()}; SEED가 주어졌기에 Entorpy Source 방식으로 하면 안됨.
+    std::default_random_engine engine{SEED};
+    double mean = 4.0;
+    double stddev = 0.6;
+    std::normal_distribution<double> d(mean, stddev);
 
     int counts[7] = {0};
 
     for (int i = 0; i < 1000; ++i)
     {
-        int roll = distribution(engine);
+        int roll = d(engine);
         ++counts[roll];
         std::cout << roll << " ";
     }
@@ -25,4 +29,3 @@ int main()
 
     return 0;
 }
-*/

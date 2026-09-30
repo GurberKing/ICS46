@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+/*
 int main() {
     std::random_device device;
     std::default_random_engine engine{device()};
@@ -12,3 +13,4 @@ int main() {
 
     std::cout << std::endl;
 }
+*/
