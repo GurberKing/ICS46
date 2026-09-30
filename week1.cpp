@@ -1,7 +1,10 @@
 #include <iostream>
 #include <random>
-// Uniform Integer
+// Normal Distribution
 int main() {
-    std::uniform_int_distribution<int> distribution(1, 6);
+    double mean = 10.0;
+    double stdev = 3.0;
+
+    std::normal_distribution<double> d(mean, stdev);
     return 0;
 }
