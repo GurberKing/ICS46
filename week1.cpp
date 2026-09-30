@@ -3,8 +3,7 @@
 // Pseudorandom Generation
 // Fixed Seed
 int main() {
-    const unsigned int SEED = 123;
-    std::default_random_engine engine{SEED};
-    std::cout << engine << '\n';
+    std::random_device device;
+    std::default_random_engine engine{device()};
     return 0;
 }
