@@ -1,10 +1,14 @@
 #include <iostream>
 #include <random>
-// Normal Distribution
 int main() {
-    double mean = 10.0;
-    double stdev = 3.0;
+    std::random_device device;
+    std::default_random_engine engine{device()};
+    std::uniform_int_distribution<int> distribution{1, 6};
 
-    std::normal_distribution<double> d(mean, stdev);
-    return 0;
+    for (int i = 0; i < 10; ++i)
+    {
+        std::cout << distribution(engine) << " ";
+    }
+
+    std::cout << std::endl;
 }
